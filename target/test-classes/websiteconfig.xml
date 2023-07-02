@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <portal value="ajio.com">
+        <env value="uat1">
+            <url>https://qa.services.ajio.com</url>
+            <username>pathri.kumar@ril.com</username>
+            <password>cmd1a3RAMTIz</password>
+        </env>
+
+        <env value="uat2">
+            <url>https://qa2.services.ajio.com</url>
+            <username>admin</username>
+            <password>YWRtaW4=</password>
+        </env>
+
+        <env value="prod">
+            <url>https://ajio.com</url>
+            <username>pathri.kumar@ril.com</username>
+            <password>cmd1a3RAMTIz</password>
+        </env>
+    </portal>
+    <portal value="extension2">
+        <env value="uat1">
+            <url>https://qa.services.ajio.com</url>
+            <username>admin</username>
+            <password>YWRtaW4=</password>
+        </env>
+
+        <env value="uat2">
+            <url>https://qa.services.ajio.com</url>
+            <username>admin</username>
+            <password>YWRtaW4=</password>
+        </env>
+
+        <env value="prod">
+            <url>https://ajio.com</url>
+            <username>admin</username>
+            <password>YWRtaW4=</password>
+        </env>
+    </portal>
+</root>
