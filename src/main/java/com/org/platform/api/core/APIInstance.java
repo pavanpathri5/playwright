@@ -8,6 +8,20 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class APIInstance {
+
+    /*public APIRequest makeRequest(APIRequestType type) throws IOException, ParseException
+    {
+        APIRequest req = xml.readAPIFromconfig(server, uri, type.name().toLowerCase());
+
+        if(req == null)
+        {
+            Logger.log("API req coming null: server: "+server + " :: uri: " + uri);
+            throw new ParseException(0);
+        }
+
+        req.baseURL = String.format(req.baseURL, uri);
+        return req;
+    }*/
     public APIResponse call(APIRequest request){
         String baseURL = request.baseURL;
         HashMap<String, String> headers = request.headers;
