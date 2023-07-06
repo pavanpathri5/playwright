@@ -6,8 +6,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 public class TestHelper {
-
-
     Browsers brw=new Browsers();
     Page page;
     @BeforeTest
@@ -19,4 +17,6 @@ public class TestHelper {
     public void tearDown(){
         brw.tearDownBrowser();
     }
+
+
 }

@@ -19,17 +19,12 @@ public class ExampleOne extends TestHelper {
     @Test(priority = 0,dataProviderClass = GenericDataProvider.class,dataProvider = "GenericDataProvider",groups = {"sanity","regression"})
     public void testOne(Object testData){
         StartTest start=new StartTest(page);
-        start.openUrl("ajio.com");
-        LoginPage loginpage=new LoginPage(page);
-        loginpage.allowLocation.click();
+        start.openUrl();
     }
 
     @Test(priority = 1,dataProviderClass = GenericDataProvider.class,dataProvider = "GenericDataProvider",groups = {"sanity"})
     public void testTwo(Object testData){
         StartTest start=new StartTest(page);
-        start.openUrl("ajio.com");
-        LoginPage loginpage=new LoginPage(page);
-        loginpage.allowLocation.click();
-        System.out.println(testData);
+        start.openUrl();
     }
 }
