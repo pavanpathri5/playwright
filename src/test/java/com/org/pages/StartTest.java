@@ -1,7 +1,7 @@
-package pages;
+package com.org.pages;
 
 import com.microsoft.playwright.Page;
-import testdata.service.GetTestData;
+import com.org.testdata.service.GetTestData;
 
 public class StartTest {
     Page page;

@@ -1,7 +1,7 @@
-package pages;
+package com.org.pages;
 
 import com.microsoft.playwright.Page;
-import com.org.platform.web.core.HtmlElement;
+import com.org.platform.web.core.playwright.HtmlElement;
 
 public class LoginPage {
     Page page;

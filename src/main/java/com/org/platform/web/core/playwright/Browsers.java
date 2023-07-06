@@ -1,6 +1,9 @@
-package com.org.platform.web.core;
+package com.org.platform.web.core.playwright;
 
 import com.microsoft.playwright.*;
+import com.microsoft.playwright.options.ScreenSize;
+
+import java.awt.*;
 
 public class Browsers {
     Playwright playwright;
@@ -10,10 +13,14 @@ public class Browsers {
     Page page;
     public Page setBrowser(){
         playwright = Playwright.create();
+        Dimension screensize=Toolkit.getDefaultToolkit().getScreenSize();
+        int width= (int)screensize.getWidth();
+        int height= (int) screensize.getHeight();
+        System.out.println("width: "+width+"Height: "+height);
         switch("CHROME"){
             case "CHROME":
-                browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(50));
-                context = browser.newContext();
+                browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+                context = browser.newContext(new Browser.NewContextOptions().setViewportSize(width,height));
                 page = context.newPage();
                 break;
             case "FIREFOX":

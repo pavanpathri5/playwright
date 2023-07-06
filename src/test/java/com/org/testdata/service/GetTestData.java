@@ -1,10 +1,10 @@
-package testdata.service;
+package com.org.testdata.service;
 
 import com.org.common.config.Environment;
 import com.org.common.io.YMLParser;
 import com.org.common.utils.FileUtils;
+import com.org.testdata.models.TestData;
 import lombok.SneakyThrows;
-import testdata.models.TestData;
 
 public class GetTestData {
     FileUtils fileUtils=new FileUtils();

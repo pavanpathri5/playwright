@@ -3,9 +3,9 @@ package com.org.platform.web.core;
 
 import com.org.common.io.XmlLib;
 
-public class WebsiteDataManager{
+public class WebsiteDataManager_Deprecated {
     private String name;
-    public WebsiteDataManager(String name)
+    public WebsiteDataManager_Deprecated(String name)
     {
         this.name = name;
     }
