@@ -1,7 +1,7 @@
 package pages;
 
 import com.microsoft.playwright.Page;
-import com.org.platform.web.core.WebsiteDataManager;
+import testdata.service.GetTestData;
 
 public class StartTest {
     Page page;
@@ -9,8 +9,8 @@ public class StartTest {
         this.page=page;
     }
 
-    public void openUrl(String portal){
-        WebsiteDataManager web=new WebsiteDataManager(portal);
-        page.navigate(web.getURL());
+    public void openUrl(){
+        GetTestData gettestdata=new GetTestData();
+        page.navigate(gettestdata.getUrl());
     }
 }
