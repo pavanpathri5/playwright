@@ -1,4 +1,4 @@
-package com.org.platform.web.core;
+package com.org.platform.web.core.playwright;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
@@ -32,5 +32,9 @@ public class HtmlElement {
     public void click(){
         getElement(page);
         locator.click();
+    }
+    public void fill(String data){
+        getElement(page);
+        locator.fill(data);
     }
 }

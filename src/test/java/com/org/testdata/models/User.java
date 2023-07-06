@@ -1,4 +1,4 @@
-package testdata.models;
+package com.org.testdata.models;
 
 import lombok.Getter;
 import lombok.Setter;
