@@ -9,7 +9,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Stream;
 
 public class GenericDataProvider {
@@ -18,7 +20,7 @@ public class GenericDataProvider {
 
     @DataProvider(
             name="GenericDataProvider",
-            parallel = true
+            parallel = false
     )
     public static Object[][] dataProvider(ITestContext ctx, ITestNGMethod m){
         String filePath=getFilePath(m,ctx);

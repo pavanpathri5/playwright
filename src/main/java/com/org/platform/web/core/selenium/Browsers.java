@@ -22,7 +22,6 @@ public class Browsers {
         }
         return driver;
     }
-
     public void tearDown(){
         driver.close();
     }
