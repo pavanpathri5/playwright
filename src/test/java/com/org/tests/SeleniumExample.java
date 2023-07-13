@@ -43,7 +43,52 @@ public class SeleniumExample extends SelTestHelper {
         ElementsPage elements=new ElementsPage(driver);
         start.openUrl();
         hp.openElementsSection();
-        elements.clickOnCheckBox();
+        elements.clickOnRadioBtnPanel();
+        elements.clickonRadioButtonYes();
+        elements.radioButtonDisplayed();
+        elements.radioButtonIsenabled();
     }
+
+    @SneakyThrows
+    @Test(priority = 4,dataProviderClass = GenericDataProvider.class,dataProvider = "GenericDataProvider",groups = {"sanity"})
+    public void testWebTables(JSONObject testData){
+        StartTest start=new StartTest(driver);
+        HomePage hp=new HomePage(driver);
+        ElementsPage elements=new ElementsPage(driver);
+        start.openUrl();
+        hp.openElementsSection();
+        elements.clickWebTablePanel();
+        elements.getTableData();
+        elements.addRow(testData.get("fn").toString(),testData.get("ln").toString(),testData.get("email").toString(),testData.get("age").toString(),testData.get("sal").toString(),testData.get("dept").toString());
+    }
+
+    @SneakyThrows
+    @Test(priority = 5,dataProviderClass = GenericDataProvider.class,dataProvider = "GenericDataProvider",groups = {"sanity"})
+    public void testButtons(JSONObject testData) {
+        StartTest start = new StartTest(driver);
+        HomePage hp = new HomePage(driver);
+        ElementsPage elements = new ElementsPage(driver);
+        start.openUrl();
+        hp.openElementsSection();
+        elements.clickButtonPanel();
+        elements.clickButtons();
+    }
+
+    @SneakyThrows
+    @Test(priority = 6,dataProviderClass = GenericDataProvider.class,dataProvider = "GenericDataProvider",groups = {"sanity"})
+    public void testLinks(JSONObject testData) {
+        StartTest start = new StartTest(driver);
+        HomePage hp = new HomePage(driver);
+        ElementsPage elements = new ElementsPage(driver);
+        start.openUrl();
+        hp.openElementsSection();
+        elements.openLinksPage();
+        softAssert.assertTrue(elements.verifyHomeLink());
+        elements.closeHomeTab();
+        softAssert.assertAll();
+        elements.verifyCreatedNetworkCall();
+
+    }
+
 
 }

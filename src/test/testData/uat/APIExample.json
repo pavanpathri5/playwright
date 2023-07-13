@@ -1,0 +1,57 @@
+{
+  "testOne": [
+    {
+      "service": "demourl"
+    }
+  ],
+  "createUser": [
+    {
+      "API": "createUser",
+      "Description": "Create user Succes API Automation",
+      "service": "demourl",
+      "request type": "post",
+      "url": "https://demoqa.com/Account/v1/User",
+      "headers": {
+        "accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "userName": "ppk@gmail1.com",
+        "password": "Rgukt@123"
+      },
+      "StatusCode": "201",
+      "response data": {
+        "code":"1204",
+        "message":"User exists!"
+      },
+      "ignore keys": [
+        "abc"
+      ],
+      "DBQuery": ""
+    },
+    {
+      "API": "createUser",
+      "Description": "Create user Succes API Automation",
+      "service": "demourl",
+      "request type": "post",
+      "url": "https://demoqa.com/Account/v1/User",
+      "headers": {
+        "accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "userName": "ppk@gmail1.com",
+        "password": "Rgukt@123"
+      },
+      "StatusCode": "201",
+      "response data": {
+        "code":"1204",
+        "message":"User exists!"
+      },
+      "ignore keys": [
+        "abc"
+      ],
+      "DBQuery": ""
+    }
+  ]
+}

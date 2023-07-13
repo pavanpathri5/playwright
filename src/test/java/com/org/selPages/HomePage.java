@@ -13,4 +13,8 @@ public class HomePage {
         elements.scrollAndClick();
     }
 
+    public Boolean verifyElementsSection(){
+       return elements.isVisible();
+    }
+
 }

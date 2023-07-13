@@ -5,13 +5,39 @@
       "email": "ppk@gmail.com",
       "currentaddress": "1200, 18th Main, Lalbagh, bangalore - 560047",
       "permanentaddress":"1200, 18th Main, Lalbagh, bangalore - 560047"
-  }],
+  },
+    {
+      "name": "Pathri Pavan Kumars",
+      "email": "ppk@gmail.com",
+      "currentaddress": "1200, 18th Main, Lalbagh, bangalore - 560047",
+      "permanentaddress":"1200, 18th Main, Lalbagh, bangalore - 560047"
+    }],
     "testCheckBox": [
       {
       }
   ],
   "testRadioButton": [
     {
+    }
+  ],
+  "testWebTables":[
+    {
+      "fn": "pavan",
+      "ln": "pathri",
+      "email": "ppk@gmail.com",
+      "age": "30",
+      "sal": "1000000",
+      "dept": "CSE"
+    }
+  ],
+  "testButtons": [
+    {
+
+    }
+  ],
+  "testLinks": [
+    {
+
     }
   ]
 

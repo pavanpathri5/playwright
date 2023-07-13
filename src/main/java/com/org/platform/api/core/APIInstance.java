@@ -1,6 +1,8 @@
 package com.org.platform.api.core;
 
+import com.org.common.utils.Logger;
 import okhttp3.*;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -8,20 +10,6 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class APIInstance {
-
-    /*public APIRequest makeRequest(APIRequestType type) throws IOException, ParseException
-    {
-        APIRequest req = xml.readAPIFromconfig(server, uri, type.name().toLowerCase());
-
-        if(req == null)
-        {
-            Logger.log("API req coming null: server: "+server + " :: uri: " + uri);
-            throw new ParseException(0);
-        }
-
-        req.baseURL = String.format(req.baseURL, uri);
-        return req;
-    }*/
     public APIResponse call(APIRequest request){
         String baseURL = request.baseURL;
         HashMap<String, String> headers = request.headers;
@@ -102,5 +90,23 @@ public class APIInstance {
             parameterStr = "?" + parameterStr.trim().substring(1);
         }
         return parameterStr;
+    }
+
+    public APIRequest makeRequest(JSONObject testData){
+        JsonLib json = new JsonLib();
+        APIRequest req = json.readAPIData(testData);
+
+        if(req == null)
+        {
+            Logger.log("API req coming null");
+        }
+
+        return req;
+    }
+
+    public APIRequest makeRequest(APIRequestType type, String baseURL, HashMap<String, String> headers, HashMap<String, String> params, String payload) throws IOException
+    {
+        APIRequest req = new APIRequest(type.name().toLowerCase(), baseURL, payload, headers, params, "", "");
+        return req;
     }
 }
