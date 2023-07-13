@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<device type="ajio">
+		<capability key="automationName" value="UiAutomator2" type="String" />
+		<capability key="platformName" value="Android" type="String" />
+		<capability key="deviceName" value="RZ8N61EPX0W" type="String" />
+		<capability key="udid" value="RZ8N61EPX0W" type="String" />
+		<capability key="appActivity" value="com.ril.ajio.launch.activity.SplashScreenActivity" type="String" />
+		<capability key="appPackage" value="com.ril.ajio" type="String" />
+		<capability key="bundleId" value="com.ril.ajiofnl" type="String" />
+	</device>
+</root>

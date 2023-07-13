@@ -1,11 +1,13 @@
 package com.org.common.io;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import com.org.common.config.Constants;
 import com.org.common.config.Environment;
+import com.org.common.utils.RandomData;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -121,5 +123,38 @@ public class XmlLib {
         NodeList envList = el.getElementsByTagName("env");
         Element finalEl = findNode(envList, "value", new Environment().readProperties("env"));
         return finalEl.getElementsByTagName(nodeName.trim()).item(0).getTextContent();
+    }
+
+    public HashMap<String, Object> readDeviceConfig(String deviceCategory)
+    {
+        String filePath = Constants._DEVICE_CONFIG;
+        NodeList list;
+        try
+        {
+            list = parseXML(filePath, "device");
+            Element deviceElemenet = findNode(list, "type", deviceCategory);
+
+            NodeList elementProperty = deviceElemenet.getElementsByTagName("capability");
+            HashMap<String, Object> map = new HashMap<>();
+            for(int i=0; i<elementProperty.getLength(); i++)
+            {
+                Element el = (Element)elementProperty.item(i);
+                String key = el.getAttribute("key");
+                String value = (new RandomData()).mergeWithEnvironment(el.getAttribute("value")); // TODO: Convert
+
+                switch(el.getAttribute("type").trim().toLowerCase())
+                {
+                    case "string": map.put(key, value); break;
+                    case "integer": map.put(key, Integer.parseInt(value)); break;
+                    case "boolean": map.put(key, Boolean.parseBoolean(value)); break;
+                }
+            }
+            return map;
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            return null;
+        }
     }
 }
