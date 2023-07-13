@@ -1,5 +1,8 @@
 package com.org.common.utils;
 
+import com.org.common.config.Environment;
+
+import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -116,6 +119,16 @@ public class RandomData
                 break;
         }
         return output;
+    }
+
+    public String mergeWithEnvironment(String str) throws IOException
+    {
+        if(str.trim().startsWith("{ENVIRONMENT:"))
+        {
+            str = str.replace("{", "").replace("}", "").replace("ENVIRONMENT", "").replace(":", "").trim();
+            str = (new Environment()).readProperties(str);
+        }
+        return str;
     }
 }
 
